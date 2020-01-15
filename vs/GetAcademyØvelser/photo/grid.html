@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>grid</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+        div.page {
+
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 3fr 5fr;
+            grid-template-rows: 2fr 2fr 2fr;
+            grid-template-areas: 'header header'
+                                'menu mainContent'
+                                'footer footer';
+           
+        }
+        div.header {
+            background-color: hotpink;
+            grid-area: header;
+            background-image: url("familie.jpg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            font-size: 50px;
+            font-style: italic;
+            text-shadow: black 2px 2px 2px;
+        
+        }
+        div.menu {
+            background-color: indigo;
+            grid-area: menu;
+            background-image: url("loveYou.jpg");
+            background-size: cover; }
+        div.mainContent {
+           
+            grid-area: mainContent; 
+            background: url("bridge.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color:navy;
+            text-shadow: oldlace 2px 2px 2px;
+            font-weight: bolder;
+            font-size: 50px;
+           
+        }
+        div.footer {
+            background-color: turquoise;
+            grid-area: footer;
+           background: url("kids.jpg");
+            background-size: cover;
+        }
+        
+        button {
+            background-color: rgb(11, 184, 49);
+            color: navy;
+            box-shadow: 5px 5px 5px white;
+        }
+        button.fixed {
+            color: navy;
+				
+				font-family: 'Lucida Bright';
+                padding-left: 10px;
+                padding-top: 2%;
+                margin-top: 0%;
+                margin-left: 0%;
+                width: 30%;
+                text-shadow: 2px 2px 1px white;
+                font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page" id="page">
+    <div class="header" style="color:red;" id="header"> css grid øvelse </div>
+    <div class="menu" id="menu">
+        <button class="fixed" onclick="visBryllup()"> Om Oss</button><br>
+        <button class="fixed"> Galleri </button><br>
+        <button class="fixed" onclick="Priser()"> Priser</button>
+    </div>
+    <div class="mainContent" id="mainContent"> Hvordan går det?</div>
+    <div class="footer" id="footer">  </div>
+    
+        <script>
+            function visBryllup() {
+             document.getElementById('mainContent').innerHTML = `<p> Vi har vært sammen i 8 år</p>
+             `;
+            }
+
+    function Priser() {
+                document.getElementById('footer').innerHTML = `
+        
+                  <p>  Priser vi har hos oss:<p>
+				<ul style="list-style-type:bullet;">
+					<li> 100 for forrett  </li>
+					<li> 200 for Middag <li>
+                    <li> 150 for dessert </li>	
+				</ul>
+        `;
+    }
+
+    </script>
+        
+</body>
+</html>

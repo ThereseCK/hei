@@ -1,0 +1,464 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta>
+	<title>❤</title>
+    <style>
+        
+        body {
+            padding: 0;
+            margin: 0;
+            font-size: 120%;
+        }
+        button, input {
+            font-size: 100%;
+        }
+        div.page {
+            padding: 0px;
+            padding: 0px;
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 6fr;
+            grid-template-rows: 2fr 8fr;
+            grid-template-areas: 'meny header' 'meny innhold';
+            background-color: white;
+        }
+        
+        div.meny {
+            grid-area: meny;
+            background-color: darkgoldenrod;
+			color: navy;
+			font-size: 20px;
+			font-family: 'Lucida Bright';
+            
+        }
+        div.innhold {
+            grid-area: innhold;
+			color: navy;
+			font-family: 'Lucida Handwriting';
+			font-style: italic;
+        }
+        div.header {
+            grid-area: header;
+			background-color: navy;
+			color: darkgoldenrod;
+			font-size: 30px;
+			font-family: Pristina;
+			font-style: italic;
+            font-weight: bold;
+			padding-top: 50px;
+			padding-left: 30%;
+            text-shadow: 1px 1px 1px white;
+            
+		
+        }
+       
+        div.menu {
+            height: 100%;            
+        }
+        div.screen {
+            border: 1px solid gray;
+            float: left;
+            height: 200px;
+            width: 170px;
+            margin-left: 100px;
+            background-color: rgb(250, 250, 250);
+            color: navy;
+            padding: 5px 5px;
+			font-family: 'Informal Roman';
+			font-style: italic;
+        }
+       
+        
+        button {
+            background-color: darkgoldenrod;
+            color: navy;
+            box-shadow: 5px 5px 5px white;
+        }
+            button.fixed {
+				color: navy;
+				background-color: darkgoldenrod;
+				font-family: 'Lucida Bright';
+                padding-left: 8%;
+                padding-top: 2%;
+                margin-top: 4%;
+                margin-left: 3%;
+                width: 80%;
+                text-shadow: 2px 2px 1px white;
+                font-size: 15px;
+                
+            }
+   
+    </style>
+</head>
+<body>
+    <div class="page" id="page">
+		<div class="header" id="header">Vi Gifter Oss 💍💏💓<br /> 08. August 2020 </div>
+        <div class="innhold" id="innhold"></div>
+        <div class="meny" id="meny">
+
+            <button class="fixed" onclick="visPersoner()">Gjesteliste</button><br />
+            <button class="fixed" onclick="visFestgjester()"> Festgjester</button>
+            <button class="fixed" onclick="visMeny1()">Meny</button><br />
+            <button class="fixed" onclick="visInfo()">Info</button><br />
+            <button class="fixed" onclick="visHuskeliste()">HuskeListe</button><br />
+            <button class="fixed" onclick="visBudskjett()">Budskjett</button>
+        </div>
+    </div>
+    <script>
+        visPersoner();
+        function visOgSkjulMeny() {
+            document.getElementById('page').classList.toggle('pageUtenMeny');
+        }
+        function visPersoner() {
+            document.getElementById('innhold').innerHTML = `
+                        <table>
+                            <tr><td></td><td>Gjester</td></tr>
+                            <tr><td><input type="checkbox" checked/></td><td>Brud</td></tr>
+                            <tr><td><input type="checkbox" checked/></td><td>Brudgom</td></tr>
+                            <tr><td><input type="checkbox" checked/></td><td>Mor til brud</td></tr>
+                            <tr><td><input type="checkbox" checked/></td><td>Mor til Brudgom</td></tr>
+                            <tr><td><input type="checkbox" checked/></td><td>Bjørn </td></tr>  
+							<tr><td><input type="checkbox" checked/></td><td>Far til Brudgom </td></tr>
+							<tr><td><input type="checkbox" checked/></td><td>Forlover Brud </td></tr>
+							<tr><td><input type="checkbox" checked/></td><td>Forlover Brudgom</td></tr>
+							<tr><td><input type="checkbox"/></td><td>Fredrik </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Hanne </td></tr>
+							<tr><td><input type="checkbox" checked/></td><td>Toastmaster Tom </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Elin </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Kristian </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Siren </td></tr>
+							<tr><td><input type="checkbox" checked/></td><td>Christina </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Christinas følge </td></tr>
+							<tr><td><input type="checkbox"/></td><td>William </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Jill </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Lottelise </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Daniel </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Gunnar </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Tage </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Marit </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Finn </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Nina </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Robert </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Roberts følge </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Steffen </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Linda </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Kenneth </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Marius </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Ronny </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Christine </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Henriette </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Rune </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Julie </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Marte </td></tr>
+							<tr><td><input type="checkbox"/></td><td>Mats </td></tr>
+
+
+                        </table>
+
+                            <p style= "color: red";> Totalt: 38 stk invitert, svart: 10 </p>
+                        `;
+        }
+        function visFestgjester() {
+            document.getElementById('innhold').innerHTML = `
+<p style="color:red; background-color:navy;"> Gester til Festen, fra ca. kl.19.30 </p>
+                    <table style="border:2px solid; width:100%;" >
+                <tr>
+                    <th style="border:2px solid;" >Menn</th>
+                    <th style="border:2px solid;" >Damer</th>
+                </tr>
+                <tr>
+                    <td> Kristoffer</td>
+                    <td> Cecilie</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> Linda</td>
+                </tr>
+                <tr>
+                    <td> Jens</td>
+                    <td> Pernille</td>
+                </tr>
+                <tr>
+                    <td> Christoffer</td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td> Thomas</td>
+                    <td> Celina</td>
+                </tr>
+ <tr>
+                    <td> Ronald</td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td> Christer Hanøy</td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td> Madeleine</td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+
+
+              
+                <tr>
+                    <td> Jørn</td>
+                    <td> Heidi</td>
+                </tr>
+                <tr>
+                    <td> Pål </td>
+                    <td> Bente</td>
+                </tr>
+                <tr>
+                    <td> Pål Ringdal</td>
+                    <td> Merete</td>
+                </tr>
+                <tr>
+                    <td> Ronny Bakke</td>
+                    <td> Monica</td>
+                </tr>
+                <tr>
+                    <td> Espen</td>
+                    <td> Verro</td>
+                </tr>
+ <tr>
+                    <td> Geir</td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td> </td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+ <tr>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+
+`;
+        }
+        function visMeny1() {
+            document.getElementById('innhold').innerHTML = `
+                <p>
+                    Det blir Raclette med følgende tilbehør:
+				<ul style="list-style-type:square;">
+					<li> Kjøtt av Okse og Svin </li>
+					<li> EdamerOst <li>
+                    <li> Dressing </li>
+					<li> Sopp </li>
+					<li> Saltkokte Amadine Poteter </li>
+					<li> Rødløk </li>
+					<li> Bacon </li>
+					<li> Salat </li>
+					<li> Kald Bearnesaus </li>
+					<li> Mais </li>
+					<li> Hjemmelaget Hvitløkssmør </li>
+				</ul>
+                </p>
+
+                <p> Dessert og Kaker:
+                <ul>
+                    <li> Bryllupskake </li>
+                    <li> Sjokoladekake </li>
+                    <li> Sjokolademousse </li>
+                    <li> Daimiskake</li>
+                    <li> Pavlova</li>
+                    <li> Brownies </li>
+                </ul>
+                </p>
+
+                    <p style="color:Red;"> Bar Meny </p>
+                 <dl>
+                    <dt> Vodka </dt>
+                        <dd>- Med Appelsinjuice, sprite eller battery </dd>
+                    <dt> Vin</dt>
+                         <dd> - Rød og Hvit</dd>
+                    <dt> Øl og Cider</dt>
+                         <dd>- Forskjellige typer</dd>
+                    <dt> Jaegermaister</dt>
+                         <dd>- shot eller bland med cola eller Battery </dd>
+                    <dt> Rom</dt>
+                         <dd>- med Cola </dd>
+                    <dt> Shots</dt>
+                         <dd>- av diverse smaker med hetvin</dd>
+                    <dt> Baylies og cognac</dt>
+                         <dd>- Til kaffe og kakene</dd>
+                </dl>
+
+                `;
+        }
+        function visInfo() {
+            document.getElementById('innhold').innerHTML = `
+                <pre style="background-color:navy; color:darkgoldenrod;">
+
+                    -Vielse I Stavern Kirke Kl. 12.30  
+                    -Innmars: You'll Never Walk Alone på orgel og trompet?  
+                    -Fotograf til forberedelsene, i kirken og portrett etterpå  
+                    -Velkomstdrink og frukt   
+                    -Middag kl 17.00 På Nesttun Samfunnshus     
+                    -Festen starter ca. kl 19.30 (egen Inngang) 
+                    -Kaffe og Kaker kl 21.00 
+                    -Overnatting på Wassilioff med Charlotte
+                    i 4 mans rom natt til Bryllupet.
+                    -Martine kommer til hotellet for å 
+                    -Fikse hår og Sminke.
+                    -Mamma har Valentina og kommer til hotellet før Vielsen.
+                    -Fredrik følger opp alteret. 
+                    -Valentina går med blomster.
+                    -Bryllupsnatten på Wassilioff.
+                    
+                    
+                    </pre>
+
+            `;
+
+        }
+        function visHuskeliste() {
+            document.getElementById('innhold').innerHTML = `
+            <table>
+                <tr><td><input type="checkbox"/></td><td> Sende Invitasjoner </td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Fikse Brudekjolen</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Kjøpe Sko </td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Ordne med Kjole til Forlover</td></tr>
+                 <tr><td><input type="checkbox" checked/></td><td> Stoltrekk</td></tr>
+                 <tr><td><input type="checkbox" checked/></td><td> Bånd til stoltrekk</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Klær til Barna</td></tr>
+                 <tr><td><input type="checkbox" checked/></td><td> Dress til Brudgom</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Duker</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Blomster</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> lys </td></tr>
+                 <tr><td><input type="checkbox"/></td><td> photobooth </td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Låne racletter </td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Gjestebok</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Bar</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Servietter</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Glass</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Bordbrikker</td></tr>
+                 <tr><td><input type="checkbox" checked/></td><td> Bordplassering</td></tr>
+                 <tr><td><input type="checkbox" /></td><td> tale </td></tr>
+                 <tr><td><input type="checkbox" checked/></td><td> Frisør /sminke </td></tr>
+                 <tr><td><input type="checkbox" checekd/></td><td> Negler </td></tr>
+                 <tr><td><input type="checkbox" checked/></td><td> Overnatting til dagen </td></tr>
+                 <tr><td><input type="checkbox" checked/></td><td> Overnatting til Bryllupsnatta</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Nødkurv</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Smykker</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Undertøy</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Sanger/salmer til Kirken </td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Dans</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Kaker</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> Musikk/band</td></tr>
+                 <tr><td><input type="checkbox"/></td><td> aktiviteter</td></tr>
+            </table>
+
+            `;
+        }
+
+        function visBudskjett() {
+            document.getElementById('innhold').innerHTML = `
+            <p style="text-decoration:underline";> Totalt: 60.000,- </p>
+            <p>Brukt enn så lenge: </p>
+             <p style= "color: red";> Differanse: </p>
+           <table>
+            <tr>
+    <th style="padding:30px;" > Hva </th>
+    <th style="padding:30px;" >Budskjett</th>
+    <th style="padding:30px;">Brukt</th>
+    <th style="color:red; padding:30px;">Differanse</th>
+    </tr>
+    <tr>
+    <td>Klær</td>
+    <td style="padding:30px;">5000,-</td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>     
+<td>Lokale</td>
+<td style="padding:30px;">5000,-</td
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Fotograf</td>
+<td style="padding:30px;">7000,-</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Decorasjoner</td>
+<td style="padding:30px;" >7000,-</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Overnattinger</td>
+<td style="padding:30px;">6000,-</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Mat</td>
+<td style="padding:30px;">5000,-</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Alkohol/ Drekke </td>
+<td style="padding:30px;">20.000,- </td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Kaker</td> 
+<td style="padding:30px;">5000,- </td>
+<td></td>
+<td></td>
+</tr>
+</table>
+            `;
+        }
+    </script>
+</body>
+</html>
